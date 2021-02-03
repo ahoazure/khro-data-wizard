@@ -4,7 +4,7 @@ from khro_app.regions.models import StgLocation
 
 class FileSource(models.Model): #added location lookup for CD/CI
     location = models.ForeignKey(StgLocation, models.PROTECT,
-		verbose_name = 'Location',)
+		verbose_name = 'Location',default=2)
     user = models.ForeignKey(CustomUser, models.PROTECT,blank=False,
 		verbose_name = 'User Name (Email)',default=4)
     name = models.CharField(max_length=255, null=True,
@@ -20,7 +20,7 @@ class FileSource(models.Model): #added location lookup for CD/CI
 
 class URLSource(models.Model):
     location = models.ForeignKey(StgLocation, models.PROTECT,
-		verbose_name = 'Location',)
+		verbose_name = 'Location',default=2)
     user = models.ForeignKey(CustomUser, models.PROTECT,blank=False,
 		verbose_name = 'User Name (Email)',default=4)
     name = models.CharField(max_length=255, null=True,blank=True,
